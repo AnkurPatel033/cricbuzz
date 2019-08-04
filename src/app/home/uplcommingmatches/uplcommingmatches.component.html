@@ -1,0 +1,19 @@
+<div style="margin: 15px">
+
+  <div>
+    <input type="date" #d > 
+    <input type="button" (click)=" filterMatchbyDate(d.value)" value="View">
+  </div>
+
+
+</div>
+
+<div>
+  <ngx-datatable class="material fullscreen" style="top: 52px" [columnMode]="'force'" [headerHeight]="50"
+    [footerHeight]="0" [rowHeight]="60" [rows]="rows">
+    <ngx-datatable-column name="Date" [width]="80"></ngx-datatable-column>
+    <ngx-datatable-column name="name" [width]="300"></ngx-datatable-column>
+
+
+  </ngx-datatable>
+</div>

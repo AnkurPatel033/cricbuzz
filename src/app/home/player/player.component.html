@@ -1,0 +1,66 @@
+<div class="col-lg-8" align="center">
+    <input type="text" class="formControl" placeholder="Search By Player Name" #name (keyup.enter)="searchPlayer(name.value)">
+
+    <div>
+<div class="col-lg-12">
+                             
+                <!-- <table class="table">
+                       <thead class="thead-dark">
+                            <th scope="col">PlayerId </th>
+                            <th scope="col">Name </th>
+                            <th scope="col">View Details </th>
+                        </thead>
+                        <tr *ngFor="let player of PlayersDetails">
+                         <td>{{player.pid}}</td>
+                         <td>{{player.fullName}}</td>
+                         <td><button  class="btn badge-primary" (click)="playerStatus(player.pid)">
+                             <span class="fi-align-center">View</span></button></td>
+
+                        </tr>
+                </table> -->
+
+
+</div>
+
+<div class="container-fluid">
+    <table class="table-responsive">
+    <ngx-datatable
+        class="material fullscreen"
+        style="top: 52px"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="0"
+        [rowHeight]="60"
+     
+        [rows]="rows">
+        <ngx-datatable-column name="pid" [width]="80"></ngx-datatable-column>
+        <ngx-datatable-column name="fullName" [width]="300"></ngx-datatable-column>
+        <ngx-datatable-column name="Action">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+            <span class="fi-align-center">
+                <button mat-button class="btn btn-primary" mdTooltip="Expand/Collapse Row"
+                (click)="openModel(row.pid)">View</button>
+            </span>
+        </ng-template>
+        </ngx-datatable-column>
+        
+      </ngx-datatable>
+
+
+      <ngx-datatable
+      class="material"
+      [rows]="rows2"
+      [columns]="columns2"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'">
+    </ngx-datatable>  
+
+</table>
+    </div>
+
+    <div>
+        
+
+    </div>
+  

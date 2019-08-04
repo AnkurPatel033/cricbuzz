@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<div class="table-responsive">
+  <h4>{{playerStatus.name}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+             
+              <th>image</th>
+              <th>Pid</th>
+              <th>country</th> 
+              <th>battingStyle</th>
+              <th>born</th>
+              <th>currentAge</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf='playerStatus!=null'>
+              
+             <td> <img [src]="playerStatus.imageURL"></td>
+              <td>{{playerStatus.pid}}</td>
+              <td>{{playerStatus.country}}</td>           
+              <td>{{playerStatus.battingStyle}}</td>
+              <td>{{playerStatus.born}}</td>
+              <td>{{playerStatus.currentAge}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
